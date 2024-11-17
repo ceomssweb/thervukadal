@@ -7,7 +7,7 @@ import { MainMenuComponent } from '../main-menu/main-menu.component';
   standalone: true,
   imports: [MainMenuComponent],
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
 
