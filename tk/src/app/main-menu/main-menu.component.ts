@@ -3,11 +3,12 @@ import { MenuItem } from 'primeng/api';
 import { MenubarModule } from 'primeng/menubar';
 import { BadgeModule } from 'primeng/badge';
 import { AvatarModule } from 'primeng/avatar';
+import { AutoFocusModule } from 'primeng/autofocus';
 
 @Component({
   selector: 'app-main-menu',
   standalone: true,
-  imports: [MenubarModule, BadgeModule, AvatarModule],
+  imports: [MenubarModule, BadgeModule, AvatarModule, AutoFocusModule],
   templateUrl: './main-menu.component.html',
   styleUrls: ['./main-menu.component.scss']
 })

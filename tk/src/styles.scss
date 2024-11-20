@@ -14,7 +14,15 @@
 //         /* CSS to Reset */
 //     }
 // }
-
+body{
+    color:#fff;
+}
+.card{
+    color: initial;
+}
+h1{
+    color: #fff;
+}
 .card {
     background: var(--surface-card);
     padding: 2rem;
