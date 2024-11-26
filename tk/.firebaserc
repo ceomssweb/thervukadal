@@ -1,0 +1,11 @@
+{
+  "projects": {
+    "default": "thervukadal"
+  },
+  "targets": {},
+  "etags": {
+    "thervukadal": {
+      "extensionInstances": {}
+    }
+  }
+}

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { HomeComponent } from './home/home.component';
 import { FilterMatchMode, PrimeNGConfig } from 'primeng/api';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
@@ -9,7 +8,8 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
   standalone: true,
   imports: [RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.scss',
+  host: { ngSkipHydration: 'true' },
 })
 export class AppComponent implements OnInit{
   title = 'tk';

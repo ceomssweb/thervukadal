@@ -1,0 +1,15 @@
+<p-carousel 
+[value]="details" 
+[numVisible]="1" 
+[numScroll]="1" 
+[circular]="true" 
+[responsiveOptions]="responsiveOptions" 
+autoplayInterval="3000">
+<ng-template let-detail pTemplate="item">
+  <div pAnimateOnScroll enterClass="scalein" leaveClass="fadeout">
+      <div class="mb-3">
+        {{detail.description}}
+      </div>
+  </div>
+</ng-template>
+</p-carousel>

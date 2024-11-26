@@ -36,7 +36,7 @@
               },
             "styles": [
               "src/styles.scss",
-              "primeng/resources/themes/nano/theme.css",
+              "primeng/resources/themes/md-light-indigo/theme.css",
               "primeng/resources/primeng.min.css",
               "primeicons/primeicons.css"
             ],
@@ -52,13 +52,13 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kB",
-                  "maximumError": "1MB"
+                  "maximumWarning": "1.5MB",
+                  "maximumError": "2MB"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kB",
-                  "maximumError": "4kB"
+                  "maximumWarning": "1.5MB",
+                  "maximumError": "1.5MB"
                 }
               ],
               "outputHashing": "all"
@@ -107,7 +107,7 @@
             "styles": [
               "src/styles.scss",
               "primeicons/primeicons.css",
-              "primeng/resources/themes/nano/theme.css",
+              "primeng/resources/themes/md-light-indigo/theme.css",
               "primeng/resources/primeng.min.css"
             ],
             "scripts": []
