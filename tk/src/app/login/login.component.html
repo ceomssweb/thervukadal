@@ -2,7 +2,7 @@
     <h3>Login</h3>
     <div class="container p-2">
         <div class="login-email" [hidden]="ifOTPReq">
-            <form (ngSubmit)="onSubmit()" [formGroup]="loginForm">
+            <form (ngSubmit)="onSubmit()">
                 <div>
                     <div class="mb-2">
                         <div class="flex flex-column gap-2">
@@ -11,7 +11,6 @@
                                 pInputText 
                                 id="username"
                                 type="username"
-                                formControlName="login"
                                 title="Enter Username or Email id"
                                 name="login"
                                 aria-describedby="username-help" 
@@ -29,7 +28,6 @@
                                 pInputText 
                                 id="password"
                                 type="password"
-                                formControlName="password"
                                 name="password"
                                 aria-describedby="password-help" 
                                 [(ngModel)]="passwordValue" />
