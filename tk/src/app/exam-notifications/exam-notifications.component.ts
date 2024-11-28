@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-exam-notifications',
   templateUrl: './exam-notifications.component.html',
   styleUrls: ['./exam-notifications.component.scss'],
-  standalone: true,
+  standalone: true
 })
 export class ExamNotificationsComponent implements OnInit {
 

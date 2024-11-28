@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { AutoFocusModule } from 'primeng/autofocus';
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
+import { SplitterModule } from 'primeng/splitter';
 
 @Component({
   selector: 'app-login',
@@ -12,15 +14,20 @@ import { InputTextModule } from 'primeng/inputtext';
     ButtonModule, 
     InputTextModule,  
     FormsModule, 
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AutoFocusModule,
+    SplitterModule
   ],
 })
 export class LoginComponent implements OnInit {
   ifMailReq: boolean = true;
   ifOTPReq: boolean = false;
+  ifRegister: boolean = false;
   loginForm: FormGroup | any;
+  registerForm: FormGroup | any;
   value: string | any;
   passwordValue: string | any;
+  conPasswordValue: string | any;
     
     submitted = false;
 
@@ -31,16 +38,35 @@ export class LoginComponent implements OnInit {
         'login': new FormControl('', Validators.required),
         'password': new FormControl('', Validators.required)
     });
+    this.registerForm = new FormGroup({
+      'registerName': new FormControl('', Validators.required),
+      'passwordNew': new FormControl('', Validators.required),
+      'conPassword': new FormControl('', Validators.required)
+  });
 }
 
-onSubmit() { 
+onLogin() { 
     this.submitted = true;
     alert(JSON.stringify(this.loginForm.value));
+}
+onRegister() { 
+  this.submitted = true;
+  alert(JSON.stringify(this.registerForm.value));
 }
 showReg(){
   this.ifMailReq = false;
   this.ifOTPReq = false;
-  debugger
+  this.ifRegister = true;
+}
+showOTP(){
+  this.ifMailReq = false;
+  this.ifOTPReq = true;
+  this.ifRegister = false;
+}
+showMail(){
+  this.ifMailReq = true;
+  this.ifOTPReq = false;
+  this.ifRegister = false;
 }
 
 }

@@ -23,27 +23,32 @@ export class MainMenuComponent implements OnInit {
     this.items = [
       {
           label: 'Home',
-          icon: 'pi pi-home'
+          icon: 'pi pi-home',
+          link: '/home'
       },
       {
         label: 'Courses',
         icon: 'pi pi-book',
         badge: '6',
-        severity: 'warning'
+        severity: 'warning',
+        link: '/courses'
     },
     {
         label: 'Examinations',
         icon: 'pi pi-pencil',
         badge: '2',
-        severity: 'success'
+        severity: 'success',
+        link: '/examinations'
     },
       {
           label: 'Admin',
-          icon: 'pi pi-server'
+          icon: 'pi pi-server',
+          link: '/admin'
       },
       {
           label: 'Search',
           icon: 'pi pi-search',
+          link: '/search'
         //   items: [
         //       {
         //           label: 'Core',
@@ -83,7 +88,8 @@ export class MainMenuComponent implements OnInit {
       },
       {
           label: 'Contact',
-          icon: 'pi pi-envelope'
+          icon: 'pi pi-envelope',
+          link: '/contact'
       }
   ];
   }

@@ -1,13 +1,15 @@
-<div class="mb-3 p-3 border-1 border-round-xl surface-border bg-primary-50 line-height-3">
+<div class="flex flex-wrap p-2 mb-3 border-1 border-round-xl surface-border bg-primary-50 line-height-3">
     <h3>Login</h3>
     <div class="container p-2">
-        <div class="login-email" [hidden]="ifOTPReq">
-            <form (ngSubmit)="onSubmit()">
+        <div class="login-email" [hidden]="!ifMailReq">
+            <form (ngSubmit)="onLogin()">
                 <div>
                     <div class="mb-2">
                         <div class="flex flex-column gap-2">
                             <label for="username">Username / Email</label>
-                            <input 
+                            <input
+                                [autofocus]="true" 
+                                pAutoFocus 
                                 pInputText 
                                 id="username"
                                 type="username"
@@ -36,23 +38,89 @@
                             </small>
                         </div>
                     </div>
-                    <div class="flex justify-content-between align-items-center flex-wrap">
+                    
+                    <div class="flex flex-wrap justify-content-between mt-4">
                        
-                            <a class="text-primary-600" title="Click to register">New User</a>
-                       
-                            <button  pButton type="submit" label="Submit" [disabled]="!loginForm.valid"></button>
+                        <a class="text-primary-600 p-link" title="Click to register" (click)="showReg()">New Registration</a>
+                    
+                        <button pButton type="submit" label="Login" [disabled]="!loginForm.valid"></button>
+                    
+                        <a class="text-primary-600 p-link" title="Click to retrive your password">Forgot Password</a>
                         
-                            <a class="text-primary-600" title="Click to retrive your password">Forgot Password</a>
-                        
+                    </div>
+
+                    <div class="text-center w-12">
+                        <div class="my-3">-OR-</div>
+                        <a class="text-primary-600 p-link" title="Click to login with OTP" (click)="showOTP()">Login using OTP</a>
                     </div>
                 </div>
             </form>
         </div>
-        <div class="login-otp" [hidden]="ifMailReq">
-
+        <div class="login-otp" [hidden]="!ifOTPReq">
+            OTP
         </div>
-        <div class="register-new" [hidden]="ifMailReq || ifOTPReq">
-Hi
+        <div class="register-new" [hidden]="!ifRegister">
+            <div>
+                <form (ngSubmit)="onRegister()">
+                <div class="mb-2">
+                    <div class="flex flex-column gap-2">
+                        <label for="registerName">Username / Email</label>
+                        <input
+                            [autofocus]="true" 
+                            pAutoFocus 
+                            pInputText 
+                            id="registerUser"
+                            type="username"
+                            title="Enter Username or Email id"
+                            name="registerName"
+                            aria-describedby="username-new-help" 
+                            [(ngModel)]="value" />
+                        <small id="username-new-help" [hidden]="registerForm.controls['registerName'].valid || !registerForm.controls['registerName'].dirty" class="text-red-600">
+                            Choose your username or enter active email.
+                        </small>
+                    </div>
+                </div>
+                <div class="mb-2">
+                    <div class="flex flex-column gap-2">
+                        <label for="passwordNew">Password</label>
+                        <input 
+                            pInputText 
+                            id="passwordChoose"
+                            type="password"
+                            name="passwordNew"
+                            aria-describedby="password-new-help" 
+                            [(ngModel)]="passwordValue" />
+                        <small id="password-new-help" [hidden]="registerForm.controls['passwordNew'].valid || !registerForm.controls['passwordNew'].dirty" class="text-red-600">
+                            Enter Valid Password
+                        </small>
+                    </div>
+                </div>
+                <div class="mb-2">
+                    <div class="flex flex-column gap-2">
+                        <label for="conPassword">Conform Password</label>
+                        <input 
+                            pInputText 
+                            id="passwordConform"
+                            type="password"
+                            name="conPassword"
+                            aria-describedby="con-password-help" 
+                            [(ngModel)]="conPasswordValue" />
+                        <small id="con-password-help" [hidden]="registerForm.controls['conPassword'].valid || !registerForm.controls['conPassword'].dirty || registerForm.controls['passwordNew'].dirty !== registerForm.controls['conPassword'].dirty" class="text-red-600">
+                            Enter Valid Password
+                        </small>
+                    </div>
+                </div>
+                <div class="flex justify-content-between mt-4">
+                
+                    <button pButton type="submit" label="Register" [disabled]="!registerForm.valid"></button>
+                    
+                </div>
+            </form>
+            </div>
+            <div class="text-center w-12">
+                <div class="my-3">-OR-</div>
+                <a class="text-primary-600 p-link" title="Click to login with OTP" (click)="showMail()">Login</a>
+            </div>
         </div>
     </div>
 </div>
