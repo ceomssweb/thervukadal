@@ -57,7 +57,31 @@
             </form>
         </div>
         <div class="login-otp" [hidden]="!ifOTPReq">
-            OTP
+            <form (ngSubmit)="onOTPLogin()">
+                <div class="mb-2">
+                    <div class="flex flex-column gap-2">
+                        <label for="otpLogin">Username / Email</label>
+                        <input
+                            [autofocus]="true" 
+                            pAutoFocus 
+                            pInputText 
+                            id="otpLogin"
+                            type="username"
+                            title="Enter valid Phone Number"
+                            name="otpLogin"
+                            aria-describedby="username-help" 
+                            [(ngModel)]="value" />
+                        <small id="otpLogin-help" [hidden]="loginForm.controls['otpLogin'].valid || !loginForm.controls['otpLogin'].dirty" class="text-red-600">
+                            Mobile number is not valid
+                        </small>
+                    </div>
+                </div>
+                <div class="flex justify-content-between mt-4">
+                
+                    <button pButton type="submit" label="Generate OTP" [disabled]="!loginForm.valid"></button>
+                    
+                </div>
+            </form>
         </div>
         <div class="register-new" [hidden]="!ifRegister">
             <div>

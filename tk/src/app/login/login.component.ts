@@ -24,6 +24,7 @@ export class LoginComponent implements OnInit {
   ifOTPReq: boolean = false;
   ifRegister: boolean = false;
   loginForm: FormGroup | any;
+  otpFormSubmit: FormGroup | any;
   registerForm: FormGroup | any;
   value: string | any;
   passwordValue: string | any;
@@ -43,11 +44,18 @@ export class LoginComponent implements OnInit {
       'passwordNew': new FormControl('', Validators.required),
       'conPassword': new FormControl('', Validators.required)
   });
+  this.otpFormSubmit = new FormGroup({
+    'OTPValue': new FormControl('', Validators.required)
+});
 }
 
 onLogin() { 
     this.submitted = true;
     alert(JSON.stringify(this.loginForm.value));
+}
+onOTPLogin(){
+  this.submitted = true;
+    alert(JSON.stringify(this.otpFormSubmit.value));
 }
 onRegister() { 
   this.submitted = true;
