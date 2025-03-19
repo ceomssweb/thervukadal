@@ -7,7 +7,7 @@
     "indexes": "firestore.indexes.json"
   },
   "hosting": {
-    "public": "dist/tk/browser/",
+    "public": "dist/tk/browser",
     "ignore": [
       "firebase.json",
       "**/.*",
@@ -26,7 +26,8 @@
   "emulators": {
     "apphosting": {
       "port": 5002,
-      "rootDirectory": "src/"
+      "rootDirectory": "./",
+      "startCommand": "npm run dev"
     },
     "auth": {
       "port": 9099
@@ -50,7 +51,8 @@
       "port": 9299
     },
     "dataconnect": {
-      "port": 9399
+      "port": 9399,
+      "dataDir": "dataconnect/.dataconnect/pgliteData"
     },
     "tasks": {
       "port": 9499
